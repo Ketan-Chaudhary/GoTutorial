@@ -32,4 +32,13 @@ func main() {
 	// GOOS=linux GOARCH=amd64 go build || GOOS=linux go build
 	// GOOS=windows GOARCH=amd64 go build || GOOS=windows go build
 
+	// if using windows powershell
+	//$env:GOOS="linux"; $env:GOARCH="amd64"; go build -o time_linux
+	//$env:GOOS="darwin"; $env:GOARCH="amd64"; go build -o time_mac
+
+	// cmd
+	// set GOOS=linux
+	// set GOARCH=amd64
+	// go build -o time_linux
+
 }
