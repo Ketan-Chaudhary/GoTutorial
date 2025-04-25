@@ -30,5 +30,6 @@ func main() {
 
 	// GOOS=darwin GOARCH=arm64 go build  or just GOOS=darwin go build
 	// GOOS=linux GOARCH=amd64 go build || GOOS=linux go build
+	// GOOS=windows GOARCH=amd64 go build || GOOS=windows go build
 
 }
