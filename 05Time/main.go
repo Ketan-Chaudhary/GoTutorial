@@ -23,4 +23,12 @@ func main() {
 	// 2025-04-01 12:12:00 +0530 IST
 	fmt.Println(createdDate.Format("Monday 01-02-2006"))
 	// Tuesday 04-01-2025
+
+	// Wait for user input to keep the terminal open
+	fmt.Println("Press Enter to exit...")
+	fmt.Scanln()
+
+	// GOOS=darwin GOARCH=arm64 go build  or just GOOS=darwin go build
+	// GOOS=linux GOARCH=amd64 go build || GOOS=linux go build
+
 }
