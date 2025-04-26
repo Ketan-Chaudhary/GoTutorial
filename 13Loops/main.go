@@ -29,4 +29,13 @@ func main() {
 	for index, value := range slc {
 		fmt.Printf("Index %v : Value %v\n", index, value)
 	}
+
+	for j := 1; j < 5; j++ {
+		if j == 3 {
+			goto lbl
+		}
+	}
+
+lbl:
+	fmt.Println("Jumped here using Goto")
 }
