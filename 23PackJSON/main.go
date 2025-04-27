@@ -62,10 +62,11 @@ func DecodeJson() {
 	// other case where we add data to key value pairs
 
 	var myWebData map[string]interface{}
+	//var myWebData map[string]any
 	json.Unmarshal(jsonData, &myWebData)
 	fmt.Printf("%#v \n", myWebData)
 
 	for key, val := range myWebData {
-		fmt.Printf("Key %v : Value %v with type %T\n", key, val,val)
+		fmt.Printf("Key %v : Value %v with type %T\n", key, val, val)
 	}
 }
