@@ -25,6 +25,7 @@ func PostRequestHandler() {
 	`)
 
 	response, _ := http.Post(MyUrl, "application/json", requestBody)
+	defer response.Body.Close()
 
 	var DataResponse strings.Builder
 	cnt, _ := io.ReadAll(response.Body)
