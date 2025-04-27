@@ -22,6 +22,8 @@ func GetRequestHandle() {
 		panic(err)
 	}
 
+	defer response.Body.Close()
+
 	fmt.Println("Status Code :", response.StatusCode)
 	fmt.Println("Status :", response.Status)
 	fmt.Println("Length of the response :", response.ContentLength)
