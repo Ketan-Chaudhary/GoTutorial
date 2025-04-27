@@ -7,7 +7,8 @@ import (
 
 func main() {
 	fmt.Println("JSON Request")
-	EncodeJson()
+	//EncodeJson()
+	DecodeJson()
 }
 
 type course struct {
@@ -15,7 +16,7 @@ type course struct {
 	Price    int
 	Platform string
 	Password string   `json:"-"`              // remove or hide this
-	Tags     []string `json:"tags,omitempty"` // if nil remove that 
+	Tags     []string `json:"tags,omitempty"` // if nil remove that
 }
 
 func EncodeJson() {
@@ -35,4 +36,26 @@ func EncodeJson() {
 	}
 
 	fmt.Printf("%s \n", finalJSON)
+}
+
+func DecodeJson() {
+	jsonData := []byte(`
+		{
+                "coursename": "ReactJs",
+                "Price": 299,
+                "Platform": "mydev.gov.in",
+                "tags": ["web-dev","JS"]
+        }
+	`)
+
+	var myCourses course
+
+	valid := json.Valid(jsonData)
+	if valid {
+		fmt.Println("Valid JSON")
+		json.Unmarshal(jsonData, &myCourses)
+		fmt.Printf("%#v \n", myCourses)
+	} else {
+		fmt.Println("InValid JSON")
+	}
 }
