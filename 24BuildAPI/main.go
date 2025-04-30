@@ -122,6 +122,12 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 
 	//TODO: check only if title is duplicate
 	//loop -> title matches with course -> Duplicate course
+	for _, val := range courses {
+		if val.CourseName == course.CourseName {
+			json.NewEncoder(w).Encode("Duplicate Data Found")
+			return
+		}
+	}
 
 	// How to generate id, -> Convert them to string
 	// append course into courses
